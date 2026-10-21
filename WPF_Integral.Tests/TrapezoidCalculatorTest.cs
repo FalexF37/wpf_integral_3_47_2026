@@ -22,5 +22,23 @@ namespace WPF_Integral.Tests
             //Assert (Сравнение)
             Assert.Equal(expectedResult, actualResult, 0.01);
         }
+        [Fact]
+        public void Trapezoid_Count_Negative_Return_Correct_Answer()
+        {
+            //Arrange (Подготовка)
+            double upperLimit = 100;
+            double lowerLimit = 0;
+            int count = -1000;
+            Func<double, double> integralFunction = x => x * x;
+
+            double expectedResult = 333333.3333;
+
+            //Act (Действия)
+            TrapezoidCalculator calculator = new TrapezoidCalculator();
+
+
+            //Assert (Сравнение)
+            Assert.Throws<ArgumentException>(() => calculator.Integrate(lowerLimit, upperLimit, count, integralFunction));
+        }
     }
 }

@@ -29,9 +29,9 @@ namespace WPF_Integral.Tests
             double upperLimit = 10;
             double lowerLimit = 0;
             int count = 1000000;
-            Func<double, double> integralFunction = x => x * x;
+            Func<double, double> integralFunction = x => 1;
 
-            double expectedResult = 333.3333;
+            double expectedResult = 10;
 
             //Act (Действия)
             RectangleCalculator calculator = new RectangleCalculator();

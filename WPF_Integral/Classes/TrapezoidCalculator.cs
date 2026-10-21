@@ -10,6 +10,8 @@ namespace WPF_Integral.Classes
     {
         public double Integrate(double a, double b, int count, Func<double, double> F)
         {
+            if (count <= 0)
+                throw new ArgumentException($"Некорректное количество разбиений {count}");
             double h = (b - a) / count;
             double S = 0;
 
